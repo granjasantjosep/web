@@ -2720,7 +2720,7 @@ body.homepage.is-preload #header:after {
     transition: -webkit-transform 0.5s ease;
     transition: transform 0.5s ease;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-    display: block;
+    display: none;
     height: 44px;
     left: 0;
     position: fixed;
