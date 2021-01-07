@@ -299,7 +299,7 @@ a {
   );
 
   &:hover {
-    color: #ef8376;
+    color: $analogous-dark;
     border-bottom-color: transparent;
   }
 }
@@ -342,22 +342,11 @@ hr {
   position: relative;
   display: block;
   border: 0;
-  top: 4.5em;
-  margin-bottom: 9em;
+  top: 0em;
+  margin-bottom: 5em;
   height: 6px;
-  border-top: solid 1px $analogous-light;
-  border-bottom: solid 1px $analogous-light;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    top: -8px;
-    display: block;
-    width: 1px;
-    height: 21px;
-    background: $analogous-light;
-  }
+  border-top: solid 1px $analogous-dark;
+  border-bottom: solid 1px $analogous-dark;
 
   &:before {
     left: -1px;
@@ -625,7 +614,7 @@ ul.icons {
       color: inherit;
 
       &:hover {
-        color: #ef8376;
+        color: $analogous-dark;
       }
     }
   }
@@ -757,6 +746,7 @@ button,
   border: 0;
   cursor: pointer;
   outline: 0;
+  font-size: 1.25em;
   font-weight: 300;
   @include vendor(
     "transition",
@@ -849,7 +839,7 @@ button,
   }
 
   &.style2 {
-    padding-top: 0;
+    padding-top: 2em;
   }
 }
 
@@ -979,8 +969,6 @@ body.homepage {
     display: inline-block;
     margin: 0;
     height: 21px;
-    border-left: solid 1px $analogous-light;
-    border-right: solid 1px $analogous-light;
 
     &:before,
     &:after {
@@ -991,8 +979,6 @@ body.homepage {
       top: 50%;
       margin-top: -2px;
       height: 5px;
-      border-top: solid 1px $analogous-light;
-      border-bottom: solid 1px $analogous-light;
     }
 
     &:before {
@@ -1055,7 +1041,7 @@ body.homepage {
     }
 
     &:hover {
-      color: #ef8376;
+      color: $analogous-dark;
     }
 
     a,
@@ -1173,11 +1159,15 @@ body.homepage {
       text-align: center;
       margin: 0 0 3em 0;
     }
+
+    a:hover {
+      color: $analogous-light;
+    }
   }
 
   .copyright {
     text-align: center;
-    color: rgba(128, 128, 128, 0.75);
+    color: rgba(244, 244, 255, 0.75);
     font-size: 0.8em;
     cursor: default;
 
