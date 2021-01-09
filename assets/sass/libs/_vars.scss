@@ -1,3 +1,31 @@
+/* Palette -------------------------------------------------------------------------------------- */
+
+// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=f0f4f4
+$primary: #42603b;
+$primary-light: #6e8e66;
+$primary-dark: #193614;
+$secondary: #f0f4f4;
+$secondary-light: #ffffff;
+$secondary-dark: #bec1c1;
+
+// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=8e24aa
+$complementary: #8e24aa;
+$complementary-light: #c158dc;
+$complementary-dark: #5c007a;
+
+// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=748249
+$analogous: #748249;
+$analogous-light: #a4b176;
+$analogous-dark: #47551f;
+
+$text-font: "Source Sans Pro", sans-serif;
+$text-color: #4b4b4b;
+$text-title: #483949;
+
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
+
 // Misc.
 $misc: (
   z-index-base: 10000,
@@ -15,11 +43,3 @@ $size: (
 
 // Font.
 $font: ();
-
-// Palette.
-$palette: ();
-
-// AMG custom.
-$primary: #42603b;
-$analogous-light: #9ca95c;
-$analogous-dark: #748249;
