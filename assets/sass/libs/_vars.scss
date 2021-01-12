@@ -1,52 +1,52 @@
-/* Palette -------------------------------------------------------------------------------------- */
+$palette: (
+  // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=f0f4f4
+  primary: #42603b,
+  primary-light: #6e8e66,
+  primary-dark: #193614,
+  secondary: #f0f4f4,
+  secondary-light: #ffffff,
+  secondary-dark: #bec1c1,
+  // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=8e24aa
+  complementary: #8e24aa,
+  complementary-light: #c158dc,
+  complementary-dark: #5c007a,
+  // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=748249
+  analogous: #748249,
+  analogous-light: #a4b176,
+  analogous-dark: #47551f,
+  // Menu
+  menu-background: #42603b,
+  menu-text: #a4b176,
+  menu-text-hover: #f0f4f4,
+  // Other colors
+  text-color: #4b4b4b,
+  text-title: #483949
+);
 
-// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=f0f4f4
-$primary: #42603b;
-$primary-light: #6e8e66;
-$primary-dark: #193614;
-$secondary: #f0f4f4;
-$secondary-light: #ffffff;
-$secondary-dark: #bec1c1;
+$duration: (
+  menu: 0.35s,
+  transition: 0.2s,
+  banner: 2.5s,
+);
 
-// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=8e24aa
-$complementary: #8e24aa;
-$complementary-light: #c158dc;
-$complementary-dark: #5c007a;
+$font: (
+  family: (
+    "Source Sans Pro",
+    Helvetica,
+    sans-serif,
+  ),
+  family-fixed: (
+    "Courier New",
+    monospace,
+  ),
+  weight: 300,
+  weight-bold: 600,
+  letter-spacing: 0.025em,
+  letter-spacing-alt: 0.25em,
+);
 
-// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=42603b&secondary.color=748249
-$analogous: #748249;
-$analogous-light: #a4b176;
-$analogous-dark: #47551f;
-
-$text-font: "Source Sans Pro", sans-serif;
-$text-color: #4b4b4b;
-$text-title: #483949;
-
-$menu-background: $primary;
-$menu-text: $analogous-light;
-$menu-text-hover: $secondary;
-
-/* Durations ------------------------------------------------------------------------------------ */
-
-$duration-menu: 0.35s;
-$duration-transition: 0.2s;
-$duration-banner: 2.5s;
-
-// ------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------
-
-// Misc.
 $misc: (
   z-index-base: 10000,
 );
 
-// Duration.
-$duration: (
-  navPanel: 0.5s,
-);
-
-// Size.
-$size: (
-  navPanel: 50vh,
-);
+$size: ();

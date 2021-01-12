@@ -1,11 +1,11 @@
 /* Basics --------------------------------------------------------------------------------------- */
 
 body {
-  background: $secondary;
-  color: $text-color;
+  background: _palette(secondary);
+  color: _palette(text-color);
   font-size: 15pt;
   line-height: 1.85em;
-  font-family: $text-font;
+  font-family: _font(family);
   font-weight: 300;
 
   // Stops initial animations until page loads.
@@ -24,7 +24,7 @@ textarea,
 select {
   font-size: 15pt;
   line-height: 1.85em;
-  font-family: $text-font;
+  font-family: _font(family);
   font-weight: 300;
 }
 
@@ -35,7 +35,7 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  color: $text-title;
+  color: _palette(text-title);
   line-height: 1.25em;
 }
 
@@ -75,7 +75,7 @@ h4 {
 strong,
 b {
   font-weight: 400;
-  color: $text-title;
+  color: _palette(text-title);
 }
 
 em,

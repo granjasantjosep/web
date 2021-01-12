@@ -1,14 +1,14 @@
 /* Imports -------------------------------------------------------------------------------------- */
 
+@import "libs/vars"; // Albert Mata: variables.
 @import "libs/functions";
 @import "libs/mixins";
 @import "libs/vendor";
-@import "libs/vars"; // Albert Mata: variables.
+@import "libs/breakpoints";
+@import "libs/html-grid";
 @import "libs/reset"; // Albert Mata: start by resetting CSS.
 @import "libs/basics"; // Albert Mata: some basic styles for most basic elements.
 @import "libs/customs"; // Albert Mata: custom styles for specific elements.
-@import "libs/breakpoints";
-@import "libs/html-grid";
 @import "libs/menu";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 

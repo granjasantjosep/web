@@ -11,7 +11,7 @@ body.homepage {
 
     &:after {
       content: "";
-      background: $primary;
+      background: _palette(primary);
       display: block;
       position: absolute;
       left: 0;
@@ -19,7 +19,7 @@ body.homepage {
       width: 100%;
       height: 100%;
       opacity: 0.8; // Albert Mata: final opacity for solor colid layer over header image.
-      @include vendor("transition", "opacity 2.5s ease-in-out");
+      @include vendor("transition", "opacity #{_duration(banner)} ease-in-out");
       @include vendor("transition-delay", "0.5s");
     }
   }
@@ -49,7 +49,7 @@ a {
   );
 
   &:hover {
-    color: $analogous;
+    color: _palette(analogous);
     border-bottom-color: transparent;
   }
 }
@@ -63,7 +63,7 @@ button,
 .button {
   position: relative;
   display: inline-block;
-  background: $analogous-light;
+  background: _palette(analogous-light);
   color: #fff;
   text-align: center;
   border-radius: 0.5em;
@@ -85,7 +85,7 @@ button,
 
   &:hover {
     color: #fff;
-    background: $analogous;
+    background: _palette(analogous);
   }
 }
 
@@ -98,8 +98,8 @@ hr {
   top: 0em;
   margin-bottom: 5em;
   height: 6px;
-  border-top: solid 1px $analogous;
-  border-bottom: solid 1px $analogous;
+  border-top: solid 1px _palette(analogous);
+  border-bottom: solid 1px _palette(analogous);
 
   &:before {
     left: -1px;
@@ -179,12 +179,12 @@ hr {
   position: relative;
   overflow: hidden;
   padding: 6em 0 6em 0;
-  background: $primary;
+  background: _palette(primary);
   color: #fff;
 
   .icon.circled {
     background: #fff;
-    color: $primary;
+    color: _palette(primary);
   }
 
   header {
@@ -209,13 +209,13 @@ hr {
     }
 
     a:hover {
-      color: $analogous-light;
+      color: _palette(analogous-light);
     }
   }
 
   .copyright {
     text-align: center;
-    color: $secondary;
+    color: _palette(secondary);
     opacity: 0.75;
     font-size: 0.8em;
     cursor: default;
@@ -253,7 +253,7 @@ hr {
       width: 6em;
       height: 6em;
       border-radius: 100%;
-      background-color: rgba($secondary-dark, 0.75);
+      background-color: rgba(_palette(secondary-dark), 0.75);
       position: absolute;
       top: 50%;
       margin-top: -3em;
@@ -278,7 +278,7 @@ hr {
 
     &:hover {
       &:before {
-        background-color: $analogous-light;
+        background-color: _palette(analogous-light);
       }
     }
   }
