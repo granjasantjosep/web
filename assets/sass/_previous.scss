@@ -389,63 +389,6 @@ table {
   }
 }
 
-/* Post */
-
-.post {
-  &.stub {
-    text-align: center;
-
-    header {
-      margin: 0;
-    }
-  }
-}
-
-/* Icons */
-
-.icon {
-  @include icon;
-  text-decoration: none;
-
-  &:before {
-    line-height: inherit;
-    font-size: 1.25em;
-  }
-
-  > .label {
-    display: none;
-  }
-
-  &.solid {
-    &:before {
-      font-weight: 900;
-    }
-  }
-
-  &.brands {
-    &:before {
-      font-family: "Font Awesome 5 Brands";
-    }
-  }
-
-  &.circled {
-    position: relative;
-    display: inline-block;
-    background: _palette(primary);
-    color: #fff;
-    border-radius: 100%;
-    width: 3em;
-    height: 3em;
-    line-height: 3em;
-    text-align: center;
-    font-size: 1.25em;
-
-    header & {
-      margin: 0 0 2em 0;
-    }
-  }
-}
-
 /* Wrapper */
 
 .wrapper {
@@ -726,10 +669,6 @@ table {
   select {
     font-size: 13pt;
     line-height: 1.65em;
-  }
-
-  .tweet {
-    text-align: center;
   }
 
   .timestamp {

@@ -463,11 +463,6 @@ hr:after {
   color: #fff;
 }
 
-#footer .icon.circled {
-  background: #fff;
-  color: #42603b;
-}
-
 #footer header {
   text-align: center;
   cursor: default;
@@ -2669,68 +2664,6 @@ table.default tfoot {
   border-top: solid 2px #e5e5e5;
 }
 
-/* Post */
-.post.stub {
-  text-align: center;
-}
-
-.post.stub header {
-  margin: 0;
-}
-
-/* Icons */
-.icon {
-  text-decoration: none;
-  text-decoration: none;
-}
-
-.icon:before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
-  text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-}
-
-.icon:before {
-  line-height: inherit;
-  font-size: 1.25em;
-}
-
-.icon > .label {
-  display: none;
-}
-
-.icon.solid:before {
-  font-weight: 900;
-}
-
-.icon.brands:before {
-  font-family: "Font Awesome 5 Brands";
-}
-
-.icon.circled {
-  position: relative;
-  display: inline-block;
-  background: #42603b;
-  color: #fff;
-  border-radius: 100%;
-  width: 3em;
-  height: 3em;
-  line-height: 3em;
-  text-align: center;
-  font-size: 1.25em;
-}
-
-header .icon.circled {
-  margin: 0 0 2em 0;
-}
-
 /* Wrapper */
 .wrapper {
   background: #fff;
@@ -2975,9 +2908,6 @@ header .icon.circled {
   select {
     font-size: 13pt;
     line-height: 1.65em;
-  }
-  .tweet {
-    text-align: center;
   }
   .timestamp {
     display: block;
