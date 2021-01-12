@@ -1,0 +1,421 @@
+#menu {
+  @include vendor(
+    "transition",
+    (
+      "transform #{$duration-menu} ease",
+      "opacity #{$duration-menu} ease",
+      "visibility #{$duration-menu}"
+    )
+  );
+  @include vendor("align-items", "center");
+  @include vendor("display", "flex");
+  @include vendor("justify-content", "center");
+  @include vendor("pointer-events", "none");
+  background: $primary;
+  box-shadow: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 3em 2em;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: _misc(z-index-base) + 2;
+
+  .inner {
+    @include vendor(
+      "transition",
+      (
+        "transform #{$duration-menu} ease-out",
+        "opacity #{$duration-menu} ease",
+        "visibility #{$duration-menu}"
+      )
+    );
+    @include vendor("transform", "rotateX(20deg)");
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    max-height: 100vh;
+    opacity: 0;
+    overflow: auto;
+    text-align: center;
+    visibility: hidden;
+    width: 18em;
+
+    > :first-child {
+      margin-top: 2em;
+    }
+
+    > :last-child {
+      margin-bottom: (2em * 1.5);
+    }
+  }
+
+  ul {
+    margin: 0 0 (2em * 0.5) 0;
+
+    &.links {
+      list-style: none;
+      padding: 0;
+
+      > li {
+        padding: 0;
+
+        > a:not(.button) {
+          border: 0;
+          border-top: solid 1px $secondary;
+          display: block;
+          font-size: 0.8em;
+          font-weight: 600;
+          letter-spacing: 0.25em;
+          line-height: 4em;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
+        > .button {
+          display: block;
+          margin: 0.5em 0 0 0;
+        }
+
+        &:first-child {
+          > a:not(.button) {
+            border-top: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .close {
+    @include vendor("transition", "color #{$duration-transition} ease-in-out");
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    display: block;
+    height: 4em;
+    line-height: 4em;
+    overflow: hidden;
+    padding-right: 1.25em;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    text-indent: 8em;
+    top: 0;
+    white-space: nowrap;
+    width: 8em;
+
+    &:before,
+    &:after {
+      @include vendor("transition", "opacity #{$duration-transition} ease-in-out");
+      background-position: center;
+      background-repeat: no-repeat;
+      content: "";
+      display: block;
+      height: 4em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 4em;
+    }
+
+    &:before {
+      background-image: svg-url(
+        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{$secondary-light}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>'
+      );
+    }
+
+    &:after {
+      background-image: svg-url(
+        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{$secondary}; stroke-width: 2; }</style><line x1="0" y1="0" x2="20" y2="20" /><line x1="20" y1="0" x2="0" y2="20" /></svg>'
+      );
+      opacity: 0;
+    }
+
+    &:hover,
+    &:active {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+body.is-ie {
+  #menu {
+    background: $primary;
+  }
+}
+
+body.is-menu-visible {
+  #page-wrapper {
+    @include vendor("filter", "blur(0.5em)");
+  }
+
+  #menu {
+    @include vendor("pointer-events", "auto");
+    opacity: 1;
+    visibility: visible;
+
+    .inner {
+      @include vendor("transform", "none");
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+nav {
+  @include vendor("display", "flex");
+  @include vendor("justify-content", "flex-end");
+  @include vendor("flex-grow", "1");
+  background-color: $menu-background;
+  color: $menu-text;
+  height: 3em;
+  line-height: 3em;
+  font-weight: 900;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+
+  a {
+    border: 0;
+    display: block;
+    font-size: 0.8em;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 0.75em;
+    position: relative;
+
+    &:last-child {
+      padding-right: 1.5em;
+    }
+
+    &:hover {
+      color: $menu-text-hover;
+    }
+
+    &[href="#menu"] {
+      &:before,
+      &:after {
+        background-image: svg-url(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32" preserveAspectRatio="none"><style>line { stroke-width: 2px; stroke: #{$menu-text}; }</style><line x1="0" y1="11" x2="24" y2="11" /><line x1="0" y1="21" x2="24" y2="21" /><line x1="0" y1="16" x2="24" y2="16" /></svg>'
+        );
+        background-position: center;
+        background-repeat: no-repeat;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 1.5em;
+        top: 0;
+        width: 24px;
+      }
+
+      &:after {
+        @include vendor("transition", "opacity #{$duration-transition} ease-in-out");
+        background-image: svg-url(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32" preserveAspectRatio="none"><style>line { stroke-width: 2px; stroke: #{$menu-text-hover}; }</style><line x1="0" y1="11" x2="24" y2="11" /><line x1="0" y1="21" x2="24" y2="21" /><line x1="0" y1="16" x2="24" y2="16" /></svg>'
+        );
+        opacity: 0;
+        z-index: 1;
+      }
+
+      &:hover,
+      &:active {
+        &:after {
+          @include vendor("transition", "opacity #{$duration-transition} ease-in-out");
+          background-image: svg-url(
+            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32" preserveAspectRatio="none"><style>line { stroke-width: 2px; stroke: #{$menu-text-hover}; }</style><line x1="0" y1="11" x2="24" y2="11" /><line x1="0" y1="21" x2="24" y2="21" /><line x1="0" y1="16" x2="24" y2="16" /></svg>'
+          );
+          opacity: 1;
+        }
+      }
+
+      &:last-child {
+        padding-right: 3.5em !important; // Albert Mata: space between MENU and right border.
+
+        &:before,
+        &:after {
+          right: 1.25em; // Albert Mata: space between hamburguer and right border.
+        }
+      }
+    }
+  }
+}
+
+/* Menu */
+#menu {
+  -webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s,
+    -webkit-transform 0.35s ease;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgba(66, 96, 59, 0.9);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 3em 2em;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10002;
+}
+
+#menu .inner {
+  -webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s,
+    -webkit-transform 0.35s ease-out;
+  -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  max-height: 100vh;
+  opacity: 0;
+  overflow: auto;
+  text-align: center;
+  visibility: hidden;
+  width: 18em;
+}
+
+#menu .inner > :first-child {
+  margin-top: 2em;
+}
+
+#menu .inner > :last-child {
+  margin-bottom: 3em;
+}
+
+#menu ul {
+  margin: 0 0 1em 0;
+}
+
+#menu ul.links {
+  list-style: none;
+  padding: 0;
+}
+
+#menu ul.links > li {
+  padding: 0;
+}
+
+#menu ul.links > li > a:not(.button) {
+  border: 0;
+  border-top: solid 1px rgba(212, 212, 255, 0.1);
+  display: block;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  line-height: 4em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#menu ul.links > li > .button {
+  display: block;
+  margin: 0.5em 0 0 0;
+}
+
+#menu ul.links > li:first-child > a:not(.button) {
+  border-top: 0 !important;
+}
+
+#menu .close {
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  overflow: hidden;
+  padding-right: 1.25em;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  text-indent: 8em;
+  top: 0;
+  //vertical-align: middle;
+  white-space: nowrap;
+  width: 8em;
+}
+
+#menu .close:before,
+#menu .close:after {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 4em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4em;
+}
+
+#menu .close:before {
+  // Albert Mata: In "stroke: %23xxxxxx%3B" those xxxxxx are the actual color.
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23a4b176%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
+}
+
+#menu .close:after {
+  // Albert Mata: In "stroke: %23xxxxxx%3B" those xxxxxx are the actual color (on hover).
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23f0f4f4%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
+  opacity: 0;
+}
+
+#menu .close:hover:after,
+#menu .close:active:after {
+  opacity: 1;
+}
+
+body.is-ie #menu {
+  background: rgba(42, 47, 74, 0.975);
+}
+
+body.is-menu-visible #wrapper {
+  -moz-filter: blur(0.5em);
+  -webkit-filter: blur(0.5em);
+  -ms-filter: blur(0.5em);
+  filter: blur(0.5em);
+}
+
+body.is-menu-visible #menu {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-menu-visible #menu .inner {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}

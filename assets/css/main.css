@@ -1,6 +1,7 @@
 /* Imports -------------------------------------------------------------------------------------- */
 /* Functions ------------------------------------------------------------------------------------ */
 /* Palette -------------------------------------------------------------------------------------- */
+/* Durations ------------------------------------------------------------------------------------ */
 /* Reset CSS ------------------------------------------------------------------------------------ */
 /**
  * The goal of a reset stylesheet is to reduce browser inconsistencies in things like default line 
@@ -616,6 +617,426 @@ hr:after {
 
 .carousel article p {
   text-align: center;
+}
+
+#menu {
+  -webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  pointer-events: none;
+  background: #42603b;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 3em 2em;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10002;
+}
+
+#menu .inner {
+  -webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  max-height: 100vh;
+  opacity: 0;
+  overflow: auto;
+  text-align: center;
+  visibility: hidden;
+  width: 18em;
+}
+
+#menu .inner > :first-child {
+  margin-top: 2em;
+}
+
+#menu .inner > :last-child {
+  margin-bottom: 3em;
+}
+
+#menu ul {
+  margin: 0 0 1em 0;
+}
+
+#menu ul.links {
+  list-style: none;
+  padding: 0;
+}
+
+#menu ul.links > li {
+  padding: 0;
+}
+
+#menu ul.links > li > a:not(.button) {
+  border: 0;
+  border-top: solid 1px #f0f4f4;
+  display: block;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  line-height: 4em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#menu ul.links > li > .button {
+  display: block;
+  margin: 0.5em 0 0 0;
+}
+
+#menu ul.links > li:first-child > a:not(.button) {
+  border-top: 0 !important;
+}
+
+#menu .close {
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  overflow: hidden;
+  padding-right: 1.25em;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  text-indent: 8em;
+  top: 0;
+  white-space: nowrap;
+  width: 8em;
+}
+
+#menu .close:before, #menu .close:after {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 4em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4em;
+}
+
+#menu .close:before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
+}
+
+#menu .close:after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23f0f4f4%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
+  opacity: 0;
+}
+
+#menu .close:hover:after, #menu .close:active:after {
+  opacity: 1;
+}
+
+body.is-ie #menu {
+  background: #42603b;
+}
+
+body.is-menu-visible #page-wrapper {
+  -moz-filter: blur(0.5em);
+  -webkit-filter: blur(0.5em);
+  -ms-filter: blur(0.5em);
+  filter: blur(0.5em);
+}
+
+body.is-menu-visible #menu {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-menu-visible #menu .inner {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+nav {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: -moz-flex-end;
+  -ms-justify-content: -ms-flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -moz-flex-grow: 1;
+  -ms-flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #42603b;
+  color: #a4b176;
+  height: 3em;
+  line-height: 3em;
+  font-weight: 900;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+}
+
+nav a {
+  border: 0;
+  display: block;
+  font-size: 0.8em;
+  height: inherit;
+  line-height: inherit;
+  padding: 0 0.75em;
+  position: relative;
+}
+
+nav a:last-child {
+  padding-right: 1.5em;
+}
+
+nav a:hover {
+  color: #f0f4f4;
+}
+
+nav a[href="#menu"]:before, nav a[href="#menu"]:after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %23a4b176%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+  width: 24px;
+}
+
+nav a[href="#menu"]:after {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %23f0f4f4%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
+  opacity: 0;
+  z-index: 1;
+}
+
+nav a[href="#menu"]:hover:after, nav a[href="#menu"]:active:after {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %23f0f4f4%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
+  opacity: 1;
+}
+
+nav a[href="#menu"]:last-child {
+  padding-right: 3.5em !important;
+}
+
+nav a[href="#menu"]:last-child:before, nav a[href="#menu"]:last-child:after {
+  right: 1.25em;
+}
+
+/* Menu */
+#menu {
+  -webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgba(66, 96, 59, 0.9);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 3em 2em;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10002;
+}
+
+#menu .inner {
+  -webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s, -webkit-transform 0.35s ease-out;
+  -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  max-height: 100vh;
+  opacity: 0;
+  overflow: auto;
+  text-align: center;
+  visibility: hidden;
+  width: 18em;
+}
+
+#menu .inner > :first-child {
+  margin-top: 2em;
+}
+
+#menu .inner > :last-child {
+  margin-bottom: 3em;
+}
+
+#menu ul {
+  margin: 0 0 1em 0;
+}
+
+#menu ul.links {
+  list-style: none;
+  padding: 0;
+}
+
+#menu ul.links > li {
+  padding: 0;
+}
+
+#menu ul.links > li > a:not(.button) {
+  border: 0;
+  border-top: solid 1px rgba(212, 212, 255, 0.1);
+  display: block;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  line-height: 4em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#menu ul.links > li > .button {
+  display: block;
+  margin: 0.5em 0 0 0;
+}
+
+#menu ul.links > li:first-child > a:not(.button) {
+  border-top: 0 !important;
+}
+
+#menu .close {
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  overflow: hidden;
+  padding-right: 1.25em;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  text-indent: 8em;
+  top: 0;
+  white-space: nowrap;
+  width: 8em;
+}
+
+#menu .close:before,
+#menu .close:after {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 4em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4em;
+}
+
+#menu .close:before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23a4b176%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
+}
+
+#menu .close:after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23f0f4f4%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
+  opacity: 0;
+}
+
+#menu .close:hover:after,
+#menu .close:active:after {
+  opacity: 1;
+}
+
+body.is-ie #menu {
+  background: rgba(42, 47, 74, 0.975);
+}
+
+body.is-menu-visible #wrapper {
+  -moz-filter: blur(0.5em);
+  -webkit-filter: blur(0.5em);
+  -ms-filter: blur(0.5em);
+  filter: blur(0.5em);
+}
+
+body.is-menu-visible #menu {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-menu-visible #menu .inner {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Container */
